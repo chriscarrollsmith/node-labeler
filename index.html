@@ -50,6 +50,28 @@
       margin-top: 20px;
       overflow-x: auto;
     }
+
+    dialog {
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .column-header {
+      position: relative;
+      padding: 8px;
+    }
+
+    .make-categorical {
+      font-size: 12px;
+      padding: 2px 6px;
+      margin-left: 8px;
+      background: #95a5a6;
+    }
   </style>
 </head>
 <body>
@@ -78,5 +100,17 @@
 
   <!-- Our compiled TypeScript will be included as a script -->
   <script src="./index.js"></script>
+
+  <dialog id="categoryModal">
+    <h3>Configure Categorical Field</h3>
+    <div>
+      <label for="categoryValues">Enter possible values (one per line):</label><br>
+      <textarea id="categoryValues" rows="10" cols="40"></textarea>
+    </div>
+    <div style="margin-top: 10px;">
+      <button id="saveCategoryBtn">Save</button>
+      <button id="cancelCategoryBtn">Cancel</button>
+    </div>
+  </dialog>
 </body>
 </html>
